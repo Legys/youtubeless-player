@@ -38,16 +38,16 @@ export default class Player extends Component {
   }
   play() {
     // if (!this.state.playingSong && this.state.loaded) {
-      if (!this.state.playingSong && this.state.loaded) {
-        this.setState({ playingSong: true });
-        this.state.song.play();
-      } else if (this.state.playingSong) {
+    if (!this.state.playingSong && this.state.loaded) {
+      this.setState({ playingSong: true });
+      this.state.song.play();
+    } else if (this.state.playingSong) {
       this.setState({ playingSong: false });
       this.state.song.pause();
     }
   }
   load() {
-    this.setState({ songIsLoading: true})
+    this.setState({ songIsLoading: true })
     this.state.song.load()
   }
   handleClickPlay() {
@@ -58,7 +58,7 @@ export default class Player extends Component {
     }
   }
   componentDidMount() {
-    this.setState({ song: Object.assign(this.state.song, { preload: 'none' })})
+    this.setState({ song: Object.assign(this.state.song, { preload: 'none' }) })
     this.state.song.addEventListener("timeupdate", e => {
       this.setState({ currentTime: Math.round(e.path[0].currentTime) });
     });
@@ -85,7 +85,7 @@ export default class Player extends Component {
   render() {
     const renderActionButton = () => {
       if (this.state.songIsLoading) {
-        return <FlightTakeoff color={red500}/>
+        return <FlightTakeoff color={red500} />
       } else if (this.state.playingSong) {
         return <Pause />
       } else if (!this.state.playingSong) {

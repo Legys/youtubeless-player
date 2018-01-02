@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import axios from 'axios'
+import { debounce } from 'lodash'
 import AppBar from "material-ui/AppBar";
 import SearchBar from "./SearchBar/SearchBar";
 import IconButton from "material-ui/IconButton";
@@ -32,6 +34,7 @@ export default class MainPage extends Component {
     super(props);
 
     this.state = {};
+
   }
   handleOnSearch = str => {
     console.log(str);
