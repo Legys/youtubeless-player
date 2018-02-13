@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import FloatingActionButton from "material-ui/FloatingActionButton";
+// import FloatingActionButton from "material-ui/FloatingActionButton";
+import IconButton from "material-ui/IconButton";
 import { CardActions } from "material-ui/Card";
-import PlayArrow from "material-ui/svg-icons/av/play-arrow";
-import FlightTakeoff from "material-ui/svg-icons/action/flight-takeoff";
-import Pause from "material-ui/svg-icons/av/pause";
-import Slider from "material-ui/Slider";
-import { red500 } from 'material-ui/styles/colors'
+import PlayArrow from "material-ui-icons/PlayArrow";
+import FlightTakeoff from "material-ui-icons/FlightTakeoff";
+import Pause from "material-ui-icons/Pause";
+// import Slider from "material-ui/Slider";
+// https://github.com/sghall/react-compound-slider
+import { red500 } from "material-ui/colors";
 
 const st = {
   grid: {
@@ -13,7 +15,7 @@ const st = {
   }
 };
 
-export default class Player extends Component {
+class Player extends Component {
   constructor(props) {
     super(props);
 
@@ -47,18 +49,20 @@ export default class Player extends Component {
     }
   }
   load() {
-    this.setState({ songIsLoading: true })
-    this.state.song.load()
+    this.setState({ songIsLoading: true });
+    this.state.song.load();
   }
   handleClickPlay() {
     if (!this.state.loaded) {
-      this.load()
+      this.load();
     } else {
-      this.play()
+      this.play();
     }
   }
   componentDidMount() {
-    this.setState({ song: Object.assign(this.state.song, { preload: 'none' }) })
+    this.setState({
+      song: Object.assign(this.state.song, { preload: "none" })
+    });
     this.state.song.addEventListener("timeupdate", e => {
       this.setState({ currentTime: Math.round(e.path[0].currentTime) });
     });
@@ -71,7 +75,7 @@ export default class Player extends Component {
     });
     this.state.song.addEventListener("loadeddata", e => {
       this.setState({ loaded: true, songIsLoading: false });
-      this.play()
+      this.play();
       console.log("load finished", e);
     });
     // this.state.song.addEventListener("seeked", e => {
@@ -85,33 +89,35 @@ export default class Player extends Component {
   render() {
     const renderActionButton = () => {
       if (this.state.songIsLoading) {
-        return <FlightTakeoff color={red500} />
+        return <FlightTakeoff color={red500} />;
       } else if (this.state.playingSong) {
-        return <Pause />
+        return <Pause />;
       } else if (!this.state.playingSong) {
-        return <PlayArrow />
+        return <PlayArrow />;
       }
-    }
+    };
     return (
       <div>
         <CardActions>
-          <Slider
+          {/* <Slider
             style={st.grid}
             min={0}
             max={Math.round(this.state.song.duration) || 100}
             value={this.state.currentTime}
             onChange={this.handleSeek}
-          />
+          /> */}
           {this.state.currentTime}
-          <FloatingActionButton
+          <IconButton
             style={st.grid}
             label="Action1"
             onClick={this.handleClickPlay}
           >
             {renderActionButton()}
-          </FloatingActionButton>
+          </IconButton>
         </CardActions>
       </div>
     );
   }
 }
+
+export default Player;

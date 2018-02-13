@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import axios from 'axios'
-import { debounce } from 'lodash'
+import axios from "axios";
+import { debounce } from "lodash";
 import AppBar from "material-ui/AppBar";
 import SearchBar from "./SearchBar/SearchBar";
 import IconButton from "material-ui/IconButton";
-import LibraryMusic from "material-ui/svg-icons/av/library-music";
+import LibraryMusic from "material-ui-icons/LibraryMusic";
+import Reboot from "material-ui/Reboot";
+
 import CurrentSong from "./Player/CurrentSong";
-import SongListsContainer from './SongLists/SongListsContainer'
+import SongListsContainer from "./SongLists/SongListsContainer";
 
 const st = {
   grid: {
@@ -19,7 +21,7 @@ const st = {
     display: "flex",
     flexFlow: "row nowrap",
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center"
   },
   listsGrid: {
     margin: "0px 20px",
@@ -34,7 +36,6 @@ export default class MainPage extends Component {
     super(props);
 
     this.state = {};
-
   }
   handleOnSearch = str => {
     console.log(str);
@@ -42,9 +43,10 @@ export default class MainPage extends Component {
   render() {
     return (
       <div style={st.grid}>
+        <Reboot />
         <AppBar
           title="Hello, Alexander"
-          iconElementLeft={
+          children={
             <IconButton>
               <LibraryMusic />
             </IconButton>
