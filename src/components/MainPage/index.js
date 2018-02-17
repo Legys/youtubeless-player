@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar";
 import Reboot from "material-ui/Reboot";
 import AppHeader from "./AppHeader";
 import CurrentSong from "./Player/CurrentSong";
-import SongListsContainer from "./SongLists/SongListsContainer";
+import SongList from "./SongList";
 
 import styled from "styled-components";
 
@@ -30,27 +30,6 @@ const ListsGrid = styled.div`
   align-items: center;
 `;
 
-// const st = {
-//   grid: {
-//     display: "flex",
-//     flexFlow: "column nowrap",
-//     justifyContent: "center"
-//   },
-//   songGrid: {
-//     margin: "0px 20px 30px",
-//     display: "flex",
-//     flexFlow: "row nowrap",
-//     justifyContent: "center",
-//     alignItems: "center"
-//   },
-//   listsGrid: {
-//     margin: "0px 20px",
-//     display: "flex",
-//     justifyContent: "center",
-//     alignItems: "center"
-//   }
-// };
-
 export default class MainPage extends Component {
   constructor(props) {
     super(props);
@@ -68,7 +47,7 @@ export default class MainPage extends Component {
           <CurrentSong />
         </SongGrid>
         <ListsGrid>
-          <SongListsContainer />
+          <SongList />
         </ListsGrid>
       </PageWrapper>
     );
