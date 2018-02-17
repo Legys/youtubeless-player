@@ -1,15 +1,9 @@
 import React, { Component } from "react";
 import ListWrapper from "../ListWrapper";
-import List, {
-  ListItem,
-  ListSubheader,
-  ListItemText,
-  ListItemIcon
-} from "material-ui/List";
-import { indigo } from "material-ui/colors";
+import SongListItem from "../SongListItem";
+import List, { ListSubheader } from "material-ui/List";
 import TextField from "material-ui/TextField";
 // import ListSubheader from "material-ui/ListSubheader";
-import MusicNote from "material-ui-icons/MusicNote";
 import Search from "material-ui-icons/Search";
 import styled from "styled-components";
 
@@ -31,12 +25,6 @@ const TextFieldStyled = styled(TextField)`
   flex: 0 1 360px;
 `;
 
-const MusicNoteStyled = styled(MusicNote)`
-  :hover {
-    fill: ${indigo[500]};
-  }
-`;
-
 export default class MyPlaylist extends Component {
   render() {
     const filler = new Array(5).fill(0);
@@ -54,12 +42,7 @@ export default class MyPlaylist extends Component {
             />
           </SearchWrapper>
           {filler.map((_, i) => (
-            <ListItem key={i}>
-              <ListItemIcon>
-                <MusicNoteStyled />
-              </ListItemIcon>
-              <ListItemText primary="Author - Song name" />
-            </ListItem>
+            <SongListItem key={i} title="Author - Song Name" />
           ))}
         </ListStyled>
       </ListWrapper>

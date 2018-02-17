@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import ListWrapper from "../ListWrapper";
-import List, { ListItem, ListSubheader } from "material-ui/List";
-// import ListSubheader from "material-ui/ListSubheader";
-import MusicIcon from "material-ui-icons/MusicNote";
-import { indigo500 } from "material-ui/colors";
+import List, { ListSubheader } from "material-ui/List";
+import SongListItem from "../SongListItem";
 import styled from "styled-components";
 
 const ListStyled = styled(List)`
@@ -16,26 +14,7 @@ export default class SimiliarSongsList extends Component {
       <ListWrapper>
         <ListStyled>
           <ListSubheader>Similiar songs</ListSubheader>
-          <ListItem
-          // primaryText="Author - Song name"
-          // leftIcon={<MusicIcon hoverColor={indigo500} />}
-          />
-          <ListItem
-          // primaryText="Author - Song name"
-          // leftIcon={<MusicIcon hoverColor={indigo500} />}
-          />
-          <ListItem
-          // primaryText="Author - Song name"
-          // leftIcon={<MusicIcon hoverColor={indigo500} />}
-          />
-          <ListItem
-          // primaryText="Author - Song name"
-          // leftIcon={<MusicIcon hoverColor={indigo500} />}
-          />
-          <ListItem
-          // primaryText="Author - Song name"
-          // leftIcon={<MusicIcon hoverColor={indigo500} />}
-          />
+          <SongListItem title="Author Song Name" />
         </ListStyled>
       </ListWrapper>
     );
