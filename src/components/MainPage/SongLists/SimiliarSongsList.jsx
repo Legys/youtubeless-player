@@ -18,24 +18,24 @@ export default class SimiliarSongsList extends Component {
         <List style={st.list}>
           <ListSubheader>Similiar songs</ListSubheader>
           <ListItem
-            primaryText="Author - Song name"
-            leftIcon={<MusicIcon hoverColor={indigo500} />}
+          // primaryText="Author - Song name"
+          // leftIcon={<MusicIcon hoverColor={indigo500} />}
           />
           <ListItem
-            primaryText="Author - Song name"
-            leftIcon={<MusicIcon hoverColor={indigo500} />}
+          // primaryText="Author - Song name"
+          // leftIcon={<MusicIcon hoverColor={indigo500} />}
           />
           <ListItem
-            primaryText="Author - Song name"
-            leftIcon={<MusicIcon hoverColor={indigo500} />}
+          // primaryText="Author - Song name"
+          // leftIcon={<MusicIcon hoverColor={indigo500} />}
           />
           <ListItem
-            primaryText="Author - Song name"
-            leftIcon={<MusicIcon hoverColor={indigo500} />}
+          // primaryText="Author - Song name"
+          // leftIcon={<MusicIcon hoverColor={indigo500} />}
           />
           <ListItem
-            primaryText="Author - Song name"
-            leftIcon={<MusicIcon hoverColor={indigo500} />}
+          // primaryText="Author - Song name"
+          // leftIcon={<MusicIcon hoverColor={indigo500} />}
           />
         </List>
       </ListWrapper>

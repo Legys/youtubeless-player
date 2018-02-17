@@ -36,15 +36,15 @@ export default class MyPlaylist extends Component {
             <Search style={st.searchIcon} />
             <TextField
               id="playlist-search"
-              hintText="Search"
+              // hintText="Search"
               type="search"
               style={st.searchInput}
               fullWidth={true}
             />
           </div>
           <ListItem
-            primaryText="Author - Song name"
-            leftIcon={<MusicNote hoverColor={indigo500} />}
+          // primaryText="Author - Song name"
+          // leftIcon={<MusicNote hoverColor={indigo500} />}
           />
         </List>
       </ListWrapper>
