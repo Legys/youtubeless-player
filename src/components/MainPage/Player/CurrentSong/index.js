@@ -7,15 +7,14 @@ import FlightTakeoff from "material-ui-icons/FlightTakeoff";
 import Pause from "material-ui-icons/Pause";
 // import Slider from "material-ui/Slider";
 // https://github.com/sghall/react-compound-slider
-import { red500 } from "material-ui/colors";
+import { red } from "material-ui/colors";
+import styled from "styled-components";
 
-const st = {
-  grid: {
-    margin: "10px 20px"
-  }
-};
+const IconButtonStyled = styled(IconButton)`
+  margin: 10px 20px;
+`;
 
-class Player extends Component {
+class CurrentSong extends Component {
   constructor(props) {
     super(props);
 
@@ -89,7 +88,7 @@ class Player extends Component {
   render() {
     const renderActionButton = () => {
       if (this.state.songIsLoading) {
-        return <FlightTakeoff color={red500} />;
+        return <FlightTakeoff nativeColor={red[500]} />;
       } else if (this.state.playingSong) {
         return <Pause />;
       } else if (!this.state.playingSong) {
@@ -107,17 +106,13 @@ class Player extends Component {
             onChange={this.handleSeek}
           /> */}
           {this.state.currentTime}
-          <IconButton
-            style={st.grid}
-            label="Action1"
-            onClick={this.handleClickPlay}
-          >
+          <IconButtonStyled label="Action1" onClick={this.handleClickPlay}>
             {renderActionButton()}
-          </IconButton>
+          </IconButtonStyled>
         </CardActions>
       </div>
     );
   }
 }
 
-export default Player;
+export default CurrentSong;

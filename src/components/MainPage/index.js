@@ -4,7 +4,7 @@ import { debounce } from "lodash";
 import SearchBar from "./SearchBar";
 import Reboot from "material-ui/Reboot";
 import AppHeader from "./AppHeader";
-import CurrentSong from "./Player/CurrentSong";
+import Player from "./Player";
 import SongList from "./SongList";
 
 import styled from "styled-components";
@@ -44,7 +44,7 @@ export default class MainPage extends Component {
         <AppHeader />
         <SearchBar onSearch={this.handleOnSearch} />
         <SongGrid>
-          <CurrentSong />
+          <Player />
         </SongGrid>
         <ListsGrid>
           <SongList />
